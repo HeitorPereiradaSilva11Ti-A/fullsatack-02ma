@@ -2,7 +2,7 @@ const main = document.querySelector("main")
 
 
 async function searchKrakens(){
-  const persons = await fetch("http://localhost:3333").then(response => response.json())
+  const persons = await fetch("https://backend-licao-marcio.vercel.app/").then(response => response.json())
   
   persons.map((person, index) =>{
     main.innerHTML += `

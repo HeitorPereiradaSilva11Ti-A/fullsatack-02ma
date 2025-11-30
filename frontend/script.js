@@ -1,4 +1,4 @@
-function inti(){
+function init(){
  const navUL = document.querySelector("nav ul")
 
  const user = JSON.parse(sessionStorage.getItem("user"))
@@ -9,18 +9,25 @@ function inti(){
                     <h2>Usuário: ${user.name}</h2>
                 </li>
                 <li>
-                    <button>Sair</button>
+                    <button id="logout">Sair</button>
                 </li>
     `
+
+    document.querySelector("#logout").addEventListener("click", logout)
 
     return
  }
 
  navUL.innerHTML += `
- <li>
+                <li>
                     <a href="./pages/login/login.html">Login</a>
                 </li>
  `
 }
 
-inti()
+function logout(){
+sessionStorage.removeItem("user")
+window.location.reload()
+}
+
+init()

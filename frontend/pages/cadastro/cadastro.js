@@ -25,7 +25,7 @@ async function signUpKraken() {
     password
    }
 
-   const response = await fetch("http://localhost:3333/cadastrar", {
+   const response = await fetch("https://backend-licao-marcio.vercel.app//cadastrar", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
